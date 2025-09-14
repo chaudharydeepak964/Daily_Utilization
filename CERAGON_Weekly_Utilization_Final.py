@@ -336,11 +336,11 @@ print("Login Cobra")
 ssh3=paramiko.SSHClient()
 ssh3.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 try:
-    ssh3.connect(hostname='10.115.1.57',username='Cobra',password='Cobra@123',port=22)
+    ssh3.connect(hostname='10.10.10.10',username='root',password='root',port=22)
 except:
     pass
 try:
-    ssh3.connect(hostname='10.19.62.229',username='Cobra',password='Cobra@123',port=22)
+    ssh3.connect(hostname='11.11.11.11',username='root',password='root',port=22)
 except:
     pass
 sftp_client1=ssh3.open_sftp()
