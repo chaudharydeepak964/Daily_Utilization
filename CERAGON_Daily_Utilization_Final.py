@@ -14,8 +14,6 @@ import warnings
 warnings.filterwarnings('ignore')
 
 
-#os.system("C:\\MYLOG\\TX\\CERAGON_AVAILABILITY\\CODE\\RAW_SFTP.py")
-################################### Auto Date########################
 da7=(datetime.now() - timedelta(1)).strftime('%Y%m%d')
 da6=(datetime.now() - timedelta(2)).strftime('%Y%m%d')
 da5=(datetime.now() - timedelta(3)).strftime('%Y%m%d')
@@ -87,8 +85,6 @@ formatted_dates = [(seven_days_ago + timedelta(days=i)).strftime(date_format) fo
 MYCOM8, MYCOM7, MYCOM6, MYCOM5, MYCOM4, MYCOM3, MYCOM2= formatted_dates
 
 
-
-
 ##################### Reading files######################################
 
 
@@ -98,8 +94,6 @@ upe = pd.read_csv("C:/Users/COR1736664/Desktop/Deepak/ALL CODE/Cera Daily Utiliz
 
 
 print ( " Files Read " )
-
-
 
 
 
@@ -468,8 +462,6 @@ dff = dff.reindex(columns=['Server','Circle','LT','Link Configuration','uniq lin
 Final_df = dff[~dff['Utilization'].isna() & (dff['Utilization'] != '')]
 
 
-#dff.to_excel(r'C:\Users\COR1736664\Desktop\Deepak\ALL CODE\Cera Daily Utilization\OUTPUT\TEST.xlsx')
-
 
 print (" Pivot Start " )
 
@@ -500,13 +492,15 @@ print("Login Cobra")
 ssh3=paramiko.SSHClient()
 ssh3.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 try:
-    ssh3.connect(hostname='10.115.1.57',username='Cobra',password='Cobra@123',port=22)
+    ssh3.connect(hostname='10.10.10.10',username='admin',password='admin',port=22)
 except:
     pass
+
 try:
-    ssh3.connect(hostname='10.19.62.229',username='Cobra',password='Cobra@123',port=22)
+    ssh3.connect(hostname='11.11.11.11',username='admin',password='admin',port=22)
 except:
     pass
+
 sftp_client1=ssh3.open_sftp()
 
 sftp_client1.chdir('/opt/MyLog/TX/MW_Link_Utilization_Daily')
@@ -528,7 +522,7 @@ print(" ** Uploading Start on BI Portal ** ")
 ssh3=paramiko.SSHClient()
 ssh3.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 try:
-    ssh3.connect(hostname='10.19.33.41',username='snenrc',password='Qwer!234',port=22)
+    ssh3.connect(hostname='1.1.1.1',username='root',password='root',port=22)
 except:
     pass
 
